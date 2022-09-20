@@ -1,0 +1,12 @@
+{
+    "private": "true",
+    "name": "react-learning",
+    "scripts": {
+        "//cra-hor": "echo \"Usage: `yarn cra:hor --name='NAME'`. Change % to $ in bash.\"",
+        "cra-hor": "create-react-app \"hands-on-react/%npm_config_name%\" --use-npm --template typescript",
+        "cp-hor": "cp _template \"hands-on-react/%npm_config_name%\""
+    },
+    "dependencies": {
+        "create-react-app": "^5.0.1"
+    }
+}
