@@ -26,10 +26,12 @@ const setters: AssignPropertyDescriptor<ProjectInfo> = {
     },
 };
 
-export default class Project extends AssignConstructor<ProjectInfo>(defaultInfo, setters)
+export class Project extends AssignConstructor<ProjectInfo>(defaultInfo, setters)
 {
     public get isNew(): boolean
     {
         return this.id === undefined;
     }
 }
+
+export default Project;

@@ -1,5 +1,6 @@
 import { Component, ReactNode } from "react";
 import { MockProjects } from "./MockProject";
+import ProjectList from "./ProjectList";
 
 export default class ProjectsPage extends Component
 {
@@ -8,7 +9,7 @@ export default class ProjectsPage extends Component
         return (
             <>
                 <h1>Projects</h1>
-                <pre>{ JSON.stringify(MockProjects, null, 4) }</pre>
+                <ProjectList projects={ MockProjects } />
             </>
         );
     }
