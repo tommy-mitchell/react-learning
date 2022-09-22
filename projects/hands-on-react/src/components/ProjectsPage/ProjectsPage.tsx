@@ -1,16 +1,12 @@
-import { Component, ReactNode } from "react";
 import { MockProjects } from "./MockProject";
 import ProjectList from "./ProjectList";
 
-export default class ProjectsPage extends Component
+export default function ProjectsPage()
 {
-    render(): ReactNode
-    {
-        return (
-            <>
-                <h1>Projects</h1>
-                <ProjectList projects={ MockProjects } />
-            </>
-        );
-    }
+    return (
+        <>
+            <h1>Projects</h1>
+            <ProjectList projects={ MockProjects } />
+        </>
+    );
 }

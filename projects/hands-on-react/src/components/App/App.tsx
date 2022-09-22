@@ -1,30 +1,14 @@
-import { Component, ReactNode } from "react";
 import ProjectsPage from "@components/ProjectsPage";
 
 interface AppProps {
 
 }
 
-interface AppState {
-
-}
-
-export default class App extends Component<AppProps, AppState>
+export default function App(props: AppProps)
 {
-    constructor(props: AppProps)
-    {
-        super(props);
-        this.state = {
-
-        };
-    }
-
-    public render(): ReactNode
-    {
-        return (
-            <div className="App">
-                <ProjectsPage />
-            </div>
-        );
-    }
+    return (
+        <div className="App">
+            <ProjectsPage />
+        </div>
+    );
 }
