@@ -2,11 +2,11 @@
     "private": "true",
     "name": "react-learning",
     "scripts": {
-        "//cra-hor": "echo \"Usage: `yarn cra:hor --name='NAME'`. Change % to $ in bash.\"",
-        "cra-hor": "create-react-app \"hands-on-react/%npm_config_name%\" --use-npm --template typescript",
-        "cp-hor": "cp _template \"hands-on-react/%npm_config_name%\""
+        "//cra": "echo \"Usage: `npm run cra --name='NAME'`.\"",
+        "cra": "cross-var \"create-react-app projects/$npm_config_name --use-npm --template typescript\""
     },
-    "dependencies": {
-        "create-react-app": "^5.0.1"
+    "devDependencies": {
+        "create-react-app": "^5.0.1",
+        "cross-var-no-babel": "^1.2.0"
     }
 }
