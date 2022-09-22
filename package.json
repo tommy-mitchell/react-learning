@@ -1,0 +1,12 @@
+{
+    "private": "true",
+    "name": "react-learning",
+    "scripts": {
+        "//cra": "echo \"Usage: `npm run cra --name='NAME'`.\"",
+        "cra": "cross-var \"create-react-app projects/$npm_config_name --use-npm --template typescript\""
+    },
+    "devDependencies": {
+        "create-react-app": "^5.0.1",
+        "cross-var-no-babel": "^1.2.0"
+    }
+}
