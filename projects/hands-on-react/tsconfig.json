@@ -20,6 +20,15 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "plugins": [
+            {
+                "name": "typed-scss-modules"
+            }
+        ],
+        "rootDirs": [
+            ".",
+            "src/_sass/@types"
+        ]
     }
 }

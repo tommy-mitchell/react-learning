@@ -11,10 +11,12 @@
         "@types/node": "^16.7.13",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
+        "concurrently": "^7.4.0",
         "react-app-alias": "^2.2.2",
         "react-dom": "^18.2.0",
         "react-scripts": "5.0.1",
         "sass": "^1.54.9",
+        "typed-scss-modules": "^7.0.0",
         "typescript": "^4.4.2",
         "web-vitals": "^2.1.0"
     },
@@ -23,8 +25,9 @@
         "react": "^18.2.0"
     },
     "scripts": {
-        "start": "craco start",
-        "build": "craco build",
+        "ts-scss": "typed-scss-modules 'src/**/*.module.scss' --nameFormat none --exportType default --quoteType double --ignore 'src/styles.scss'",
+        "start": "concurrently \"yarn ts-scss -w\" \"craco start\"",
+        "build": "yarn ts-scss && craco build",
         "test": "craco test",
         "eject": "craco eject"
     },

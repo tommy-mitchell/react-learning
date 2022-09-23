@@ -1,4 +1,5 @@
 import { Project } from "./Project";
+import styles from "./projects-page.module.scss";
 
 interface ProjectListProps {
     projects: Project[];
@@ -6,8 +7,9 @@ interface ProjectListProps {
 
 export default function ProjectList({ projects }: ProjectListProps)
 {
+    console.log(styles)
     return (
-        <div className="ProjectList row">
+        <div className={ `${ styles.ProjectList } row` }>
             {projects.map(project => (
                 <div key={ project.id } className="cols-sm">
                     <div className="card">
