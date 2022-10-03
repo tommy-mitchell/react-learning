@@ -17,9 +17,9 @@ export default function ProjectList({ projects }: ProjectListProps): JSX.Element
             {projects.map(project => (
                 <div key={ project.id } className="cols-sm">
                     {project === projectBeingEdited ? (
-                        <ProjectForm />
+                        <ProjectForm onCancel={() => setProjectBeingEdited({})} />
                     ) : (
-                        <ProjectCard project={ project } onEdit={ setProjectBeingEdited } />
+                        <ProjectCard project={ project } onEdit={setProjectBeingEdited} />
                     )}
                 </div>
             ))}

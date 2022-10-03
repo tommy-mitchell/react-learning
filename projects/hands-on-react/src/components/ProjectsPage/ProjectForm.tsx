@@ -1,7 +1,11 @@
 import Project from "./Project";
 import styles from "./projects-page.module.scss";
 
-export default function ProjectForm(): JSX.Element
+interface ProjectFormProps {
+    onCancel: () => void;
+}
+
+export default function ProjectForm({ onCancel }: ProjectFormProps): JSX.Element
 {
     return (
         <form className={`${ styles.ProjectForm } input-group vertical`}>
@@ -16,7 +20,7 @@ export default function ProjectForm(): JSX.Element
             <div className="input-group">
                 <button className="primary bordered medium">Save</button>
                 <span />
-                <button type="button" className="bordered medium">Cancel</button>
+                <button type="button" className="bordered medium" onClick={onCancel}>Cancel</button>
             </div>
         </form>
     );
