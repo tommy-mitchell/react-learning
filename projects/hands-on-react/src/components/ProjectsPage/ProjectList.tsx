@@ -6,9 +6,10 @@ import styles from "./projects-page.module.scss";
 
 interface ProjectListProps {
     projects: Project[];
+    onSave: (project: Project) => void;
 }
 
-export default function ProjectList({ projects }: ProjectListProps): JSX.Element
+export default function ProjectList({ projects, onSave }: ProjectListProps): JSX.Element
 {
     const [projectBeingEdited, setProjectBeingEdited] = useState({});
 
@@ -17,7 +18,7 @@ export default function ProjectList({ projects }: ProjectListProps): JSX.Element
             {projects.map(project => (
                 <div key={ project.id } className="cols-sm">
                     {project === projectBeingEdited ? (
-                        <ProjectForm onCancel={() => setProjectBeingEdited({})} />
+                        <ProjectForm onCancel={() => setProjectBeingEdited({})} onSave={onSave} />
                     ) : (
                         <ProjectCard project={ project } onEdit={setProjectBeingEdited} />
                     )}

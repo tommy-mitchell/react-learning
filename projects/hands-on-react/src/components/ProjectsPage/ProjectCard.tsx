@@ -1,4 +1,4 @@
-import Project from "./Project";
+import { Project } from "./Project";
 
 const formatDescription = (description: string) => `${ description.substring(0, 60) }...`;
 
