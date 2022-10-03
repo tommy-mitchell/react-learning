@@ -1,5 +1,6 @@
 import { Project } from "./Project";
 import ProjectCard from "./ProjectCard";
+import ProjectForm from "./ProjectForm";
 import styles from "./projects-page.module.scss";
 
 interface ProjectListProps {
@@ -13,6 +14,7 @@ export default function ProjectList({ projects }: ProjectListProps): JSX.Element
             {projects.map(project => (
                 <div key={ project.id } className="cols-sm">
                     <ProjectCard project={ project } />
+                    <ProjectForm />
                 </div>
             ))}
         </div>
