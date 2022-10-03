@@ -8,6 +8,8 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps): JSX.Element
 {
+    const handleEditClick = (projectBeingEdited: Project) => console.log(projectBeingEdited.name);
+
     return (
         <div className="card">
             <img src={ project.imageURL } alt={ project.name } />
@@ -17,6 +19,9 @@ export default function ProjectCard({ project }: ProjectCardProps): JSX.Element
                 </h5>
                 <p>{ formatDescription(project.description) }</p>
                 <p>Budget : { project.budget.toLocaleString() }</p>
+                <button className="bordered" onClick={() => handleEditClick(project)}>
+                    <span className="icon-edit" /> Edit
+                </button>
             </section>
         </div>
     );
