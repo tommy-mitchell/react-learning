@@ -4,11 +4,12 @@ const formatDescription = (description: string) => `${ description.substring(0, 
 
 interface ProjectCardProps {
     project: Project;
+    onEdit: (project: Project) => void;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps): JSX.Element
+export default function ProjectCard({ project, onEdit }: ProjectCardProps): JSX.Element
 {
-    const handleEditClick = (projectBeingEdited: Project) => console.log(projectBeingEdited.name);
+    const handleEditClick = (projectBeingEdited: Project) => onEdit(projectBeingEdited);
 
     return (
         <div className="card">

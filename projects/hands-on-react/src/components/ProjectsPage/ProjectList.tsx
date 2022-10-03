@@ -13,7 +13,7 @@ export default function ProjectList({ projects }: ProjectListProps): JSX.Element
         <div className={ `${ styles.ProjectList } row` }>
             {projects.map(project => (
                 <div key={ project.id } className="cols-sm">
-                    <ProjectCard project={ project } />
+                    <ProjectCard project={ project } onEdit={ (project) => console.log(project.name) } />
                     <ProjectForm />
                 </div>
             ))}
