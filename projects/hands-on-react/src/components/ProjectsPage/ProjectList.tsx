@@ -13,12 +13,17 @@ export default function ProjectList({ projects, onSave }: ProjectListProps): JSX
 {
     const [projectBeingEdited, setProjectBeingEdited] = useState({});
 
+    const handleSave = (project: Project) => {
+        onSave(project);
+        setProjectBeingEdited({});
+    };
+
     return (
         <div className={ `${ styles.ProjectList } row` }>
             {projects.map(project => (
                 <div key={ project.id } className="cols-sm">
                     {project === projectBeingEdited ? (
-                        <ProjectForm onCancel={() => setProjectBeingEdited({})} onSave={onSave} />
+                        <ProjectForm project={ project } onCancel={() => setProjectBeingEdited({})} onSave={handleSave} />
                     ) : (
                         <ProjectCard project={ project } onEdit={setProjectBeingEdited} />
                     )}
